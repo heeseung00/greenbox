@@ -540,3 +540,23 @@ input:focus {
   justify-content: center;
   margin-left: 10px;
 }
+
+/* 배너 */
+.banner-wrap{
+  margin-bottom: 89px;
+}
+
+/* 골라담기 */
+.pick-box{
+}
+h1{
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 39px;
+}
+
+
+/* 리뷰 */
+/* 푸터 up */
+/* 푸터 down */
