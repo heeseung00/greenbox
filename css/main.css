@@ -24,6 +24,7 @@ body {
   font-family: "Pretendard", sans-serif;
   font-size: 1.3rem;
   color: #333;
+  word-break: break-all;
 }
 /* 공통클래스 */
 .inner {
@@ -54,7 +55,7 @@ body {
   display: block;
   color: #fff;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 /* 헤더 */
@@ -177,9 +178,6 @@ body {
 
 /* nav */
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   position: relative;
   top: 0;
   left: 0;
@@ -190,6 +188,25 @@ body {
   background: #fff;
   transition: top 0.3s ease-in-out;
   white-space: nowrap;
+}
+
+/* depth2 뒷배경 */
+nav::before {
+  content: "";
+  position: absolute;
+  top: 80%;
+  /* display: block; */
+  display: none;
+  z-index: 0;
+  width: 100vw;
+  height: 270px;
+  background: #fff;
+}
+
+nav .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .gnb {
@@ -213,50 +230,29 @@ body {
   z-index: 999;
 }
 
-/* .depth1:hover {
-  color: #4aa577;
-  font-weight: 700;
-} */
-
-.gnb a:hover {
+.depth1:hover {
   color: #4aa577;
   font-weight: 700;
 }
+
+/* .gnb a:hover {
+  color: #4aa577;
+  font-weight: 700;
+} */
 
 .gnb > li:hover > a {
   color: #4aa577;
   font-weight: 500;
 }
 
-/* 작동안함 
-/* .gnb>li에 hover 시 .depth2-wrap를 보여주고 .nav::after를 숨김 
-.gnb > li:hover .depth2-wrap {
-  display: block;
-}
-
-.gnb :hover .nav::after {
-  display: block;
-}
-*/
-
-.nav::before {
-  content: "";
-  position: absolute;
-  top: 80%;
-  /* display: block; */
-  display: none;
-  z-index: 0;
-  width: 100vw;
-  height: 270px;
-  background: #fff;
-}
-
 .depth2-wrap {
-  /* display: block; */
-  display: none;
-}
-.depth2 {
   display: block;
+  /* display: none; */
+}
+
+.depth2 {
+  display: none;
+  /* display: block; */
   position: absolute;
   z-index: 99999999999999999999;
   /* top: 32px; */
@@ -330,10 +326,11 @@ input:focus {
 /* 비주얼 */
 .visual {
   position: relative;
-  top: 0px;
+  /* top: 0; */
+  left: 0;
+  right: 0;
   display: block;
   width: 100%;
-  height: auto;
   margin: 0;
 }
 /* 비주얼 hover 버튼 나오는 효과 */
@@ -346,11 +343,12 @@ input:focus {
 
 .visual-slide {
   position: relative;
+  width: 100%;
 }
 
 .sw-visual-prev {
   position: absolute;
-  z-index: 99999;
+  z-index: 9999;
   top: 45%;
   left: 5%;
   background: url(../images/banner_slide_right_btn.png) no-repeat center;
@@ -360,23 +358,43 @@ input:focus {
   transform: rotate(180deg);
   cursor: pointer;
   opacity: 0;
-  transition: all 0.6s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .sw-visual-next {
   position: absolute;
+  z-index: 9999;
   top: 45%;
   right: 5%;
-  background: url(../images/banner_slide_right_btn.png) no-repeat center;
+  background: url(../images/banner_slide_right_btn.png) no-repeat 50% 50%;
   width: 52px;
   height: 52px;
   border: none;
+  transform: rotate(0deg);
   cursor: pointer;
   opacity: 0;
   transition: all 0.5s ease 0s;
 }
 
+/* 
+.sw-visual {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: auto;
+} */
+
+.swiper-slide {
+  width: 100%; /* 또는 다른 값을 설정해보세요 */
+  height: auto;
+  overflow: hidden;
+}
+
 .swiper-slide a {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -384,7 +402,8 @@ input:focus {
 
 .swiper-slide a img {
   width: 100%;
-  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* 카테고리 */
@@ -532,7 +551,7 @@ input:focus {
 }
 
 .best-title {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
@@ -547,10 +566,12 @@ input:focus {
 }
 
 /* 골라담기 */
+
 .pick {
   position: relative;
   width: 100%;
 }
+
 h1 {
   font-size: 2.8rem;
   font-weight: bold;
@@ -559,6 +580,7 @@ h1 {
 }
 .item-box2{
   display: flex;
+
 
 }
 .item2{
@@ -569,6 +591,7 @@ h1 {
   height: 28px;
   margin-left: 5px;
 }
+
 /* 리뷰 */
 /* 푸터 up */
 /* 푸터 down */
