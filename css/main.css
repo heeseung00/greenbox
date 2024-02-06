@@ -542,21 +542,33 @@ input:focus {
 }
 
 /* 배너 */
-.banner-wrap{
+.banner-wrap {
   margin-bottom: 89px;
 }
 
 /* 골라담기 */
-.pick-box{
+.pick {
+  position: relative;
+  width: 100%;
 }
-h1{
+h1 {
   font-size: 2.8rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 39px;
 }
+.item-box2{
+  display: flex;
 
-
+}
+.item2{
+  width: calc(100% / 2);
+}
+.section-title img {
+  width: 27px;
+  height: 28px;
+  margin-left: 5px;
+}
 /* 리뷰 */
 /* 푸터 up */
 /* 푸터 down */
