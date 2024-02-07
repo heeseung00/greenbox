@@ -476,46 +476,46 @@
                     <div class="item-box2">
                         <ul class="item2">
                             <li>
-                                <div class="item-img2">
+                                <div class="item-img-box2">
                                     <a href="#" "><img src="images/content_pack_1.jpg" alt="샐러드 23종 골라담기"></a>
+                                    <div class="item-link">
+                                        <button type="button" class="cart"></button>
+                                    </div>
                                 </div>
-                                <div class="item-link">
-                                    <button type="button" class="cart"></button>
-                                </div>
-                            </li>
+                            
                             <div class="item-title">
                                 <a href="#">샐러드 23종 골라담기</a>
                             </div>
                             <div class="item-price">
-                                <strong>23%</strong>
-                                <strong>6,900원</strong>
+                                <span>23%</span>
+                                <span>6,900원</span>
                                 <span>9,000원</span>
                             </div>
                             <div class="item-review">
                                 <span><img src="images/test-review.png" alt="리뷰 아이콘"/></span>
                                 <span>370</span>
                             </div>
-                        </div>
-                        <li>
-                            <div class="pick-link">
-                                <a href="#"><img src="images/content_pack_2.jpg" alt="간편식 23종 골라담기"></a>
-                            </div>
-                            <div class="item-link">
-                                <button type="button" class="cart"></button>
-                            </div>
                         </li>
+                         <li>  
+                            <div class="item-img-box2">
+                                <a href="#"><img src="images/content_pack_2.jpg" alt="간편식 23종 골라담기"></a>
+                                <div class="item-link">
+                                    <button type="button" class="cart"></button>
+                                </div>
+                            </div>
                         <div class="item-title">
                             <a href="#">간편식 23종 골라담기</a>
                         </div>
                         <div class="item-price">
-                            <strong>36%</strong>
-                            <strong>3,500원</strong>
+                            <span>36%</span>
+                            <span>3,500원</span>
                             <span>5,500원</span>
                         </div>
                         <div class="item-review">
                             <span><img src="images/test-review.png" alt="리뷰 아이콘"/></span>
                             <span>726</span>
                         </div>
+                    </li>
                     </ul>
                 </div>
             </div>
@@ -527,11 +527,11 @@
                 <div class="section-title">
                     <h1>슬친자들의 찐 간증 모음<img src="images/emoji/emoji_heart.png" alt="하트 이모지"></h1>
                 </div>
-                <div class="seciton-center">
+                <div class="seciton-center inner">
                     <div class="review-inner">
                         <!-- swiper -->
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide swiper-slide-active">
                                 <a href="#">
                                     <div class="review-img-box">
                                         <img src="images/review-img-1.jpeg" alt="리뷰1"/>
@@ -548,7 +548,8 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="swiper-slide">
+
+                            <div class="swiper-slide swiper-slide-next">
                                 <a href="#">
                                     <div class="review-img-box">
                                         <img src="images/review-img-2.jpeg" alt="리뷰2"/>
@@ -566,6 +567,7 @@
                                     </div>
                                 </a>
                             </div>
+
                             <div class="swiper-slide">
                                 <a href="#">
                                     <div class="review-img-box">
@@ -586,6 +588,7 @@
                                     </div>
                                 </a>
                             </div>
+
                             <div class="swiper-slide">
                                 <a href="#">
                                     <div class="review-img-box">
@@ -611,6 +614,7 @@
                                     </div>
                                 </a>
                             </div>
+                            
                             <div class="swiper-slide">
                                 <a href="#">
                                     <div class="review-img-box">
@@ -629,6 +633,7 @@
                                     </div>
                                 </a>
                             </div>
+
                             <div class="swiper-slide">
                                 <a href="#">
                                     <div class="review-img-box">
@@ -646,6 +651,7 @@
                                     </div>
                                 </a>
                             </div>
+
                             <div class="swiper-slide">
                                 <a href="#">
                                     <div class="review-img-box">
@@ -676,11 +682,12 @@
                                 </div>
                             </a>
                         </div>
+
                     </div>
                     <a href="#" class="swiperBtn swiper-button-next"><img src="images/미압축/review_button_left.png"></a>
                     <a href="#" class="swiperBtn swiper-button-prev"><img src="images/미압축/review_button_right.png"></a>
-
                 </div>
+
                 <!-- review-inner -->
             </div>
             <!-- .section center -->
@@ -693,6 +700,7 @@
     <footer class="footer">
         <div class="ft-up">
             <div class="ft-top-wrap inner">
+
                 <div class="cs">
                     <h3>고객센터</h3>
                     <div class="cs-left">
@@ -712,10 +720,9 @@
                         <a class="cs_btn" href="#">
                             <span>FAQ 바로가기</span></a>
                     </div>
-                    <!-- .cs-center-->
                 </div>
-                <!--cs-->
-                <div class="bank-info">
+
+                <div class="bank">
                     <h3>입금 계좌</h3>
                     <p>예금주 : (주)에이타워</p>
                     <div>
@@ -745,8 +752,9 @@
                     <a class="footer_btn" href="#">
                         <span>입금자 확인하기</span></a>
                 </div>
-                <!--.bank-info-->
-                <div class="ft-notice">
+
+
+                <div class="notice">
                     <h3>공지사항</h3>
                     <a class="footer_notice_more" href="#">더보기</a>
                     <ul>
@@ -771,18 +779,17 @@
                                             <time class="date" datetime="2023.11.24">2023.11.24</time>
                                         </li>
                                     </ul>
-                                </div>
-                                <!--.ft-notice-->
-                            </div>
-                            <!-- .ft-top-box inner -->
+                                </div><!--.ft-notice-->
+                            </div><!-- .ft-top-box inner -->
                         </div>
-                        <!-- footer down -->
-                        <div class="ft-down1">
-                            <div class="ft-down1-wrap inner">
-                                <div class="link">
-                                    <ul class="link-left">
-                                        <li>
-                                            <a href="#" ">회사소개</a>
+
+    <!-- footer down -->
+        <div class="ft-down1">
+             <div class="ft-down1-wrap inner">
+                   <div class="footer-link">
+                         <ul class="link-left">
+                               <li>
+                                    <a href="#" ">회사소개</a>
                                         </li>
                                         <li>
                                             <a href="#">이용약관</a>
@@ -825,10 +832,10 @@
                                             <li>법인명(상호) : 그린박스</li>
                                             <li>대표자(성명) : 김상곤</li>
                                             <li>사업자 등록번호 : 504-85-25999</li>
-                                        </ul><br>
+                                        </ul>
                                         <li>통신판매업신고 : 2013-대구중구-3307호</li>
-                                        <a href="#" ">[사업자정보확인]</a>
-                                        <li>전화 : 053-572-1005</li><br>
+                                        <a href="#">[사업자정보확인]</a>
+                                        <li>전화 : 053-572-1005</li>
                                         <li>주소 : 대구광역시 중구 중앙대로 394 제일빌딩 5F</li>
                                         <li>개인정보관리책임자 : 김상곤
                                             <a href="#">(catering.greenbox@gmail.com)</a>
@@ -837,11 +844,12 @@
                                     <p class="copyright">Copyright © 그린박스. All rights reserved.</p>
                                 </div>
                             </div>
-                        </div>
+                        
                         <!-- 하단 로고 -->
                         <span class="ft-logo"><span><img src="images/미압축/footer_logo.png" alt="로고"/></span>
                         </span>
                     </div>
+                </div>
                 </footer>
             </div>
         </body>
