@@ -562,7 +562,13 @@ input:focus {
 
 /* 배너 */
 .banner-wrap {
+  position: relative;
   margin-bottom: 89px;
+}
+.banner-wrap img {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* 골라담기 */
@@ -571,6 +577,9 @@ input:focus {
   position: relative;
   width: 100%;
 }
+.pick {
+  margin: 100px 0 55px;
+}
 
 h1 {
   font-size: 2.8rem;
@@ -578,12 +587,11 @@ h1 {
   text-align: center;
   margin-bottom: 39px;
 }
-.item-box2{
+.item2 {
   display: flex;
-
-
+  gap: 28px;
 }
-.item2{
+.item2 > li {
   width: calc(100% / 2);
 }
 .section-title img {
@@ -591,7 +599,219 @@ h1 {
   height: 28px;
   margin-left: 5px;
 }
-
+.item-img-box2 {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.item-img-box2 a img {
+  display: block;
+  width: 100%;
+  position: relative;
+}
 /* 리뷰 */
+.review{
+  margin: 100px 0 55px;
+}
+.review-inner {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+.review-inner .swiper-wrapper {
+  padding: 20px 0;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox; */
+  display: flex;
+  /* -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform; */
+  transition-property: transform, -webkit-transform;
+}
+.review-inner .swiper-wrapper .swiper-slide {
+  width: 33.33%;
+  /* height: 100%; */
+  box-sizing: border-box;
+  padding: 0 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  /* background-color: #f1d3d3; */
+}
+.review-inner .swiper-wrapper .swiper-slide a {
+  height: 100%;
+  display: block;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+}
+.review-img-box {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  margin: 0 0 10px;
+  border-radius: 5px 5px 0 0;
+}
+.review-img-box img {
+  vertical-align: middle;
+}
+.review-img-box a:hover {
+  transition: transform 0.5s ease;
+}
+.section-bottom {
+  padding: 0 16px;
+}
+.section-bottom .star {
+  margin: 8px 0;
+  color: #fff59b;
+  font-size: 24px;
+}
+.review-info {
+  font-size: 16px;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* 아래 물어보기 */
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 150.5%;
+}
+.review-info > .info > p:nth-child(1) {
+  margin-right: 4px;
+}
+.review-info > .info > p:nth-child(2) {
+  display: inline-block;
+  color: #7d7d7d;
+}
+
 /* 푸터 up */
-/* 푸터 down */
+.footer_up {
+  display: block;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+.ft-top-wrap{
+display: table;
+table-layout: fixed;
+}
+
+.cs {
+  width: 33%;
+}
+.cs-right{
+  display: flex;
+  flex-direction: column;
+}
+.bank{
+  display: table-cell;
+}
+.notice {
+  display: table-cell;
+}
+/* 푸터 down1 */
+.ft-down1 {
+  background: #3b3b3b;
+}
+.ft-down1-wrap {
+  position: relative;
+  width: 100%;
+  background-color: #FFF59B;
+}
+.footer-link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #626262;
+
+}
+.link-left {
+  padding: 40px 0 30px;
+  font-size: 0;
+  text-align: left;
+}
+.link-left > li {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  padding: 0px 30px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.link-left > li > a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: inherit;
+}
+.link-right {
+  padding: 26px 0 0;
+  font-size: 0;
+  text-align: right;
+  /* background-color: #858585; */
+}
+.link-right > li {
+  display: inline-block;
+  vertical-align: top;
+  /* background-color: #4aa577; */
+}
+.link-right > li:nth-child(1) > a {
+  display: block;
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-image: url("../images/미압축/ft-down-icon-1.png");
+}
+.link-right > li:nth-child(2) > a {
+  display: block;
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-image: url("../images/미압축/ft-down-icon-2.png");
+}
+.link-right > li:nth-child(3) > a {
+  display: block;
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-image: url("../images/미압축/ft-down-icon-3.png");
+}
+/* 푸터 down2 */
+.ft-down2 {
+  padding: 30px 0 50px;
+  background: #3b3b3b;
+}
+.company {
+  display: inline-block;
+  vertical-align: top;
+  color: #929292;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.company-info {
+  display: flex;
+}
+.company > p {
+  margin-top: 23px;
+}
+.ft-down2-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.ft-logo > span > img {
+  width: 241px;
+  height: 57px;
+  /* background-color: #4aa577; */
+}
+.ft-down1{
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
