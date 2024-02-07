@@ -18,45 +18,62 @@ window.addEventListener("load", function () {
     inner.classList.add("inner"); // .inner 클래스 추가
   });
 
-  //nav slidedown, slideup 효과
-  document.addEventListener("DOMContentLoaded", function () {
-    // 모든 .gnb a 요소를 가져옵니다.
-    const gnbLinks = document.querySelectorAll(".gnb");
-
-    // 각 .gnb a 요소에 대한 이벤트 리스너를 추가합니다.
-    gnbLinks.forEach(function (link) {
-      link.addEventListener("mouseover", function () {
-        // mouseover 이벤트가 발생했을 때 처리할 코드
-        link.parentNode.querySelector(".depth2").classList.add("slideDown");
-        link.parentNode.parentNode.parentNode.classList.add("beforeVisible");
-      });
-
-      link.addEventListener("mouseleave", function () {
-        // mouseleave 이벤트가 발생했을 때 처리할 코드
-        link.parentNode.querySelector(".depth2").classList.remove("slideDown");
-        link.parentNode.parentNode.parentNode.classList.remove("beforeVisible");
-      });
+  //nav 마우스 오버, 마우스아웃 효과
+  document.querySelector(".gnb").addEventListener("mouseover", function () {
+    // 모든 .depth2-wrap을 보이게 함
+    const depth2 = document.querySelectorAll(".depth2");
+    const navBg = document.querySelector(".nav-bg");
+    depth2.forEach(function (depth2) {
+      depth2.style.display = "block";
     });
+    navBg.style.display = "block";
   });
 
-  // // display 이용
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   const gnbLinks = document.querySelectorAll(".gnb a");
+  document.querySelector(".gnb").addEventListener("mouseout", function () {
+    // 모든 .depth2-wrap을 감춤
+    const depth2 = document.querySelectorAll(".depth2");
+    const navBg = document.querySelector(".nav-bg");
+    depth2.forEach(function (depth2) {
+      depth2.style.display = "none";
+    });
+    navBg.style.display = "none";
+  });
 
-  //   gnbLinks.forEach(function (link) {
-  //     link.addEventListener("mouseover", function () {
-  //       link.parentNode.querySelector(".depth2").style.display = "block";
-  //       document.querySelector(".nav::before").style.display = "block";
-  //     });
+  // top으로 가는 버튼
+  const topBtn = document.getElementById("topBtn");
+  topBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    // 조건문 수정
+    if (window.scrollY === 0) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  });
 
-  //     link.addEventListener("mouseleave", function () {
-  //       link.parentNode.querySelector(".depth2").style.display = "none";
-  //       document.querySelector(".nav::before").style.display = "none";
-  //     });
-  //   });
-  // });
+  //chat 버튼 클릭
+  const chatBtn = document.getElementById("chatBtn");
+  const chatTextBox = document.querySelector(".chat-text-box");
 
-  // // visual swiper적용
+  chatBtn.addEventListener("click", function (event) {
+    // chat-text-box의 display 속성을 토글하여 나타내거나 숨김
+    if (
+      chatTextBox.style.display === "none" ||
+      chatTextBox.style.display === ""
+    ) {
+      chatTextBox.style.display = "block";
+    } else {
+      chatTextBox.style.display = "none";
+    }
+  });
+
+  // visual swiper적용
   const swiper = new Swiper(".sw-visual", {
     loop: true,
     // 슬라이드의 모션 속도를 transition 맞춘다.
