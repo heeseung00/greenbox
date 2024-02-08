@@ -824,26 +824,79 @@ h1 {
 
 .footer_up {
   display: block;
-  background: #fff;
-  border-top: 1px solid #ddd;
 }
 .ft-top-wrap {
-  display: table;
-  table-layout: fixed;
+  display: flex;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding: 43px 0 48px;
+  /* display: table;
+  table-layout: fixed; */
 }
 
 .cs {
-  width: 33%;
+  position: relative;
+  width: calc(100% / 3);
+  padding-right: 29px;
+  border-right: 1px solid #ddd;
 }
+.ft-up-tit {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+.cs-left > strong {
+  font-size: 2.5rem;
+  line-height: 4rem;
+}
+.cs-left > p {
+  color: #666;
+}
+.cs-day > p {
+  font-size: 1.3rem;
+  color: #222;
+}
+.cs-day {
+  padding-bottom: 3rem;
+}
+
+.cs-left {
+  word-wrap: break-word;
+  width: 60%;
+  float: left;
+  font-weight: bold;
+  line-height: 1.6rem;
+  /* background-color: #4aa577; */
+}
+
 .cs-right {
   display: flex;
   flex-direction: column;
 }
+.cs-right a{
+  display: block;
+  width: 162px;
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 45px;
+  letter-spacing: -0.025em;
+  color: #666;
+  border: 1px solid #666;
+  border-radius: 6px;
+}
 .bank {
-  display: table-cell;
+  position: relative;
+  width: calc(100% / 3);
+  padding: 0 29px;
+  border-right: 1px solid #ddd;
+  /* display: table-cell; */
 }
 .notice {
-  display: table-cell;
+  position: relative;
+  width: calc(100% / 3);
+  padding-left: 29px;
+  /* display: table-cell; */
 }
 /* 푸터 down1 */
 .ft-down1 {
