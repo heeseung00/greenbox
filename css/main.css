@@ -35,6 +35,134 @@ body {
   margin: 0 auto;
   /* background-color: bisque; */
 }
+
+/* 기타 */
+/* 모달창 */
+.modal-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-main {
+  position: relative;
+  top: 20%;
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-img {
+  display: block;
+  cursor: pointer;
+  max-width: 480px;
+}
+
+.modal-img img {
+  width: 100%;
+}
+.modal-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+  width: 100%;
+  max-width: 480px;
+  background-color: #fff;
+  font-size: 1.6rem;
+}
+
+.modal-today {
+  cursor: pointer;
+  padding: 20px;
+}
+
+.modal-close {
+  cursor: pointer;
+  padding: 20px;
+}
+
+/* 고정 아이콘 */
+.icon-wrap {
+  position: relative;
+}
+
+#topBtn {
+  width: 55px;
+  height: 55px;
+  background-color: #fff;
+  /* background-color: #4aa577; */
+  position: fixed;
+  right: 4%;
+  bottom: 10%;
+  z-index: 9999;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.1) 0px 8px 30px;
+  margin-bottom: 40px;
+}
+
+#topBtn img {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  border: none;
+}
+
+#chatBtn {
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  right: 4%;
+  bottom: 7%;
+  border-radius: 20px;
+  z-index: 9999;
+  /* background-color: #e7e7e7; */
+  background-color: #fff;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.15) 0px 8px 30px;
+  /* background: url(../images/chat.svg) no-repeat center;
+  background-size: 60%; */
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#chatBtn img {
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chat-text-box {
+  width: 300px;
+  height: 550px;
+  background-color: #fdfcfc;
+  border-radius: 7px;
+  position: absolute;
+  bottom: 0px;
+  left: -320px;
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px inset,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px;
+}
+
 /* 전체 레이아웃 */
 .wrap {
   position: relative;
@@ -197,7 +325,10 @@ body {
   left: 0;
   right: 0;
   z-index: 99999;
-  width: 100%;
+  display: block;
+  width: 100vw;
+  /* max-width: 1200px;
+  min-height: 120px; */
   padding: 15px 0;
   background: #fff;
   /* white-space: nowrap; */
@@ -220,18 +351,22 @@ nav .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* width: 1200px; */
 }
 
 .gnb {
   display: flex;
-  gap: 104px;
+  /* gap: 104px; */
   padding-left: 10px;
   margin-right: 20px;
+  /* width: 100%; */
 }
 
 .gnb li {
   font-size: 2rem;
+  /* font-size: 1.6vw; */
   font-weight: 500;
+  padding: 0 48px;
 }
 
 .gnb li:hover {
@@ -327,7 +462,11 @@ nav:hover .nav-bg {
 .search {
   display: block;
   position: relative;
-  width: 220px;
+  /* width: 220px; */
+  width: 50%;
+  max-width: 200px;
+  min-width: 152px;
+  /* height: 4vh; */
   height: 34px;
   border-radius: 20px;
   background-color: #f4f4f4;
@@ -343,7 +482,8 @@ input:focus {
   border-radius: 20px;
   background-color: transparent;
   border: none;
-  width: 190px;
+  /* width: 190px; */
+  width: 100%;
   height: 100%;
   padding: 0 20px;
   font-size: 1.4rem;
@@ -480,7 +620,9 @@ input:focus {
   position: relative;
   width: 100%;
   padding: 10px 0;
-  background-color: #fafafd;
+  /* background-color: #fafafd; */
+  background-color: #f8f8f8;
+  /* background-color: rgba(54, 221, 137, 0.07); */
 }
 
 .test-wrap {
@@ -545,9 +687,14 @@ input:focus {
   width: 100%;
   height: 100%;
   background: url("../images/cart.svg") no-repeat center / cover;
-  opacity: 80%;
+  opacity: 90%;
   border: transparent;
   cursor: pointer;
+}
+
+.item-link button:hover {
+  background-color: #00ff95;
+  border-radius: 50%;
 }
 
 .item-title {
@@ -556,11 +703,11 @@ input:focus {
   font-weight: 600;
 
   /* 말줄임  */
-  overflow: hidden;
+  /*overflow: hidden;
   max-width: 400px;
-  white-space: nowrap;
+   white-space: nowrap;
   text-overflow: ellipsis;
-  word-break: break-word;
+  word-break: break-word;*/
 }
 
 .item-price {
@@ -601,12 +748,12 @@ input:focus {
 }
 
 .best-title {
+  display: flex;
+  justify-content: center;
   font-size: 28px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
   margin-left: 10px;
 }
 
@@ -638,11 +785,11 @@ h1 {
   margin-bottom: 39px;
 }
 
-.item2 {
+.pick .item2 {
   display: flex;
   gap: 28px;
 }
-.item2 > li {
+.pick .item2 > li {
   width: calc(100% / 2);
 }
 
@@ -746,81 +893,6 @@ h1 {
 /* 푸터 up */
 
 /* 푸터 down */
-
-/* 고정 아이콘 */
-.icon-wrap {
-  position: relative;
-}
-
-#topBtn {
-  width: 55px;
-  height: 55px;
-  background-color: #fff;
-  /* background-color: #4aa577; */
-  position: fixed;
-  right: 4%;
-  bottom: 10%;
-  z-index: 9999;
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset,
-    rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.1) 0px 8px 30px;
-  margin-bottom: 40px;
-}
-
-#topBtn img {
-  width: 40%;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-  border: none;
-}
-
-#chatBtn {
-  width: 55px;
-  height: 55px;
-  position: fixed;
-  right: 4%;
-  bottom: 7%;
-  border-radius: 20px;
-  z-index: 9999;
-  /* background-color: #e7e7e7; */
-  background-color: #fff;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
-    rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.15) 0px 8px 30px;
-  /* background: url(../images/chat.svg) no-repeat center;
-  background-size: 60%; */
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-#chatBtn img {
-  width: 65%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.chat-text-box {
-  width: 300px;
-  height: 550px;
-  background-color: #fdfcfc;
-  border-radius: 7px;
-  position: absolute;
-  bottom: 0px;
-  left: -320px;
-  display: none;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px inset,
-    rgba(0, 0, 0, 0.1) 0px 4px 6px;
-}
 
 .footer_up {
   display: block;
