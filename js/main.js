@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  // 스크롤 할 때, nav 상단 고정
+  // ==== 스크롤 할 때, nav 상단 고정
   window.addEventListener("scroll", function () {
     var nav = document.querySelector(".nav");
     var header = document.querySelector(".header");
@@ -28,7 +28,6 @@ window.addEventListener("load", function () {
     });
     navBg.style.display = "block";
   });
-
   document.querySelector(".gnb").addEventListener("mouseout", function () {
     // 모든 .depth2-wrap을 감춤
     const depth2 = document.querySelectorAll(".depth2");
@@ -39,7 +38,98 @@ window.addEventListener("load", function () {
     navBg.style.display = "none";
   });
 
-  // top으로 가는 버튼
+  // ===== 모달창 닫기
+  const modalClose = document.getElementById("modalClose");
+  const allClose = document.getElementById("modalWrap");
+
+  modalClose.addEventListener("click", function (event) {
+    if (allClose.style.display === "none" || allClose.style.display === "") {
+      allClose.style.display = "block";
+    } else {
+      allClose.style.display = "none";
+    }
+  });
+
+  // ==== 모달창 '오늘 하루 보지 않기' 클릭
+  document.getElementById("modalToday").addEventListener("click", function () {
+    // 현재 날짜와 시간을 기록
+    const currentDate = new Date().toLocaleString();
+    // sessionStorage에 'hideModal'을 현재 날짜와 시간으로 저장
+    sessionStorage.setItem(
+      "hideModal",
+      JSON.stringify({ value: true, datetime: currentDate })
+    );
+
+    // #modalWrap에 스크롤을 없앰
+    document.getElementById("modalWrap").style.overflowY = "hidden";
+    // 모달창을 숨김
+    document.getElementById("modalWrap").style.display = "none";
+  });
+
+  // 닫기 버튼 클릭 시
+  document.getElementById("modalClose").addEventListener("click", function () {
+    // #modalWrap의 스타일 초기화하여 세로 스크롤을 허용
+    document.getElementById("modalWrap").style.overflowY = "visible";
+    // 모달창을 숨김
+    document.getElementById("modalWrap").style.display = "none";
+  });
+
+  // 페이지 로드 시 모달 상태 확인
+  window.onload = function () {
+    const modalWrap = document.getElementById("modalWrap");
+    const storedData = JSON.parse(sessionStorage.getItem("hideModal"));
+
+    if (storedData && storedData.value) {
+      // 현재 시간과 저장된 시간 차이를 계산 (밀리초 단위)
+      const timeDifference =
+        new Date().getTime() - new Date(storedData.datetime).getTime();
+      // 24시간(밀리초 기준)가 지났거나, 새로고침을 했을 경우
+      if (
+        timeDifference >= 24 * 60 * 60 * 1000 ||
+        (window.performance && window.performance.navigation.type === 1)
+      ) {
+        sessionStorage.removeItem("hideModal");
+      } else {
+        // #modalWrap에 스크롤을 없앰
+        modalWrap.style.overflowY = "hidden";
+        modalWrap.style.display = "none";
+      }
+    }
+  };
+
+  // // 모달창 닫기
+  // const modalClose = document.getElementById("modalClose");
+  // const allClose = document.getElementById("modalWrap");
+
+  // modalClose.addEventListener("click", function (event) {
+  //   if (allClose.style.display === "none" || allClose.style.display === "") {
+  //     allClose.style.display = "block";
+  //   } else {
+  //     allClose.style.display = "none";
+  //   }
+  // });
+
+  // //모달창 하루 동안 숨기기
+  // // 모달창이 보이지 않는 상태인지 여부를 localStorage에 저장
+  // if (localStorage.getItem("hideModal") === "true") {
+  //   document.getElementById("modalWrap").style.display = "none";
+  // }
+
+  // // 오늘 하루 보지 않기 버튼 클릭 시
+  // document.getElementById("modalToday").addEventListener("click", function () {
+  //   // localStorage에 'hideModal'을 'true'로 저장
+  //   localStorage.setItem("hideModal", "true");
+  //   // 모달창을 숨김
+  //   document.getElementById("modalWrap").style.display = "none";
+  // });
+
+  // // 닫기 버튼 클릭 시
+  // document.getElementById("modalClose").addEventListener("click", function () {
+  //   // 모달창을 숨김
+  //   document.getElementById("modalWrap").style.display = "none";
+  // });
+
+  // ===== top으로 가는 버튼
   const topBtn = document.getElementById("topBtn");
   topBtn.addEventListener("click", function (event) {
     event.preventDefault();
@@ -57,7 +147,7 @@ window.addEventListener("load", function () {
     }
   });
 
-  //chat 버튼 클릭
+  //===== chat 버튼 클릭
   const chatBtn = document.getElementById("chatBtn");
   const chatTextBox = document.querySelector(".chat-text-box");
 
@@ -73,7 +163,7 @@ window.addEventListener("load", function () {
     }
   });
 
-  // visual swiper적용
+  // ===== visual swiper적용
   const swiper = new Swiper(".sw-visual", {
     loop: true,
     // 슬라이드의 모션 속도를 transition 맞춘다.

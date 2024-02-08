@@ -42,9 +42,21 @@
     <title>미니 프로젝트-그린박스</title>
   </head>
   <body>
-    <div class="wrap">
-      <!-- 고정 아이콘 -->
-      <div class="icon-wrap">
+    <!-- 모달창 -->
+    <div class="modal-wrap" id="modalWrap">
+        <div class="modal-main">
+            <a href="index.html" class="modal-img">
+                <img src="images/modal-img-1.gif" alt="" id="modalImg">
+            </a>
+            <div class="modal-text">
+                <div class="modal-today" id="modalToday">다시 보지 않기</div>
+               <div class="modal-close" id="modalClose">닫기</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 고정 아이콘 -->
+    <div class="icon-wrap">
         <div id="topBtn" > 
             <!-- <img src="images/top-btn-w.png" alt="탑 아이콘"> -->
             <img src="images/top-arrow.png" alt="탑 아이콘">
@@ -54,6 +66,8 @@
             <div class="chat-text-box"></div>
         </div>
     </div>
+
+    <div class="wrap">
       <!-- 탑배너 -->
       <section class="top-banner">
         <a href="#">지금 가입하면 첫 정기배송 30,000원 할인 쿠폰팩❤</a>
@@ -175,8 +189,8 @@
             </li>
           </ul>
         <form action="" class="search">
-          <a href="#"
-            ><input
+          <a href="#">
+            <input
               type="text"
               class="search-text"
               id=""
@@ -805,8 +819,8 @@
                                         <li>
                                             <a href="#">고객센터</a>
                                         </li>
-                                    </ul>
-                                    <ul class="link-right">
+                          </ul>
+                        <ul class="link-right">
                                         <li>
                                             <a href="#">페이스북</a>
                                         </li>
@@ -819,7 +833,7 @@
                                         <li>
                                             <a href="#">인스타그램</a>
                                         </li>
-                                    </ul>
+                         </ul>
                                 </div>
                             </div>
                         </div>
