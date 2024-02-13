@@ -1,60 +1,37 @@
 window.addEventListener("load", function () {
+  // ===== top으로 가는 버튼
+  const topBtn = document.getElementById("topBtn");
+  topBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    // 조건문 수정
+    if (window.scrollY === 0) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  });
 
- // ===== top으로 가는 버튼
- const topBtn = document.getElementById("topBtn");
- topBtn.addEventListener("click", function (event) {
-   event.preventDefault();
-   // 조건문 수정
-   if (window.scrollY === 0) {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth",
-     });
-   } else {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth",
-     });
-   }
- });
+  // ===== chat 버튼 클릭
+  const chatBtn = document.getElementById("chatBtn");
+  const chatTextBox = document.querySelector(".chat-text-box");
 
- // ===== chat 버튼 클릭
- const chatBtn = document.getElementById("chatBtn");
- const chatTextBox = document.querySelector(".chat-text-box");
-
- chatBtn.addEventListener("click", function (event) {
-   // chat-text-box의 display 속성을 토글하여 나타내거나 숨김
-   if (
-     chatTextBox.style.display === "none" ||
-     chatTextBox.style.display === ""
-   ) {
-     chatTextBox.style.display = "block";
-   } else {
-     chatTextBox.style.display = "none";
-   }
- });
-
- // ===== visual swiper적용
- const swiper = new Swiper(".sw-visual", {
-  loop: true,
-  // 슬라이드의 모션 속도를 transition 맞춘다.
-  speed: 900,
-  autoplay: {
-    delay: 2500,
-    // 사용자가 마우스 클릭 드래그로 이동하면
-    // 아래 구문이 없으면 autoplya 가 해제되므로
-    // 이것을 방지해 주기위한 처리
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".sw-visual-next",
-    prevEl: ".sw-visual-prev",
-  },
-  centeredSlides: true, // 추가
-  slidesPerView: "auto", // 추가
-});
-
-
+  chatBtn.addEventListener("click", function (event) {
+    // chat-text-box의 display 속성을 토글하여 나타내거나 숨김
+    if (
+      chatTextBox.style.display === "none" ||
+      chatTextBox.style.display === ""
+    ) {
+      chatTextBox.style.display = "block";
+    } else {
+      chatTextBox.style.display = "none";
+    }
+  });
 
   // ===== 스크롤 할 때, nav 상단 고정
   window.addEventListener("scroll", function () {
@@ -94,10 +71,10 @@ window.addEventListener("load", function () {
     });
     navBg.style.display = "none";
   });
-  
+
   // ===== top-banner 닫기
   var topBanner = document.querySelector(".top-banner");
-  var topBannerClose = document.querySelector(".top-banner-close")
+  var topBannerClose = document.querySelector(".top-banner-close");
 
   topBannerClose.addEventListener("click", function (event) {
     if (topBanner.style.display === "none" || topBanner.style.display === "") {
@@ -158,14 +135,9 @@ window.addEventListener("load", function () {
         (window.performance && window.performance.navigation.type === 1)
       ) {
         sessionStorage.removeItem("hideModal");
-      } 
-    };
-
+      }
+    }
   };
-
-});
-
-
 
   // ===== visual swiper적용
   const swiper = new Swiper(".sw-visual", {
@@ -187,24 +159,23 @@ window.addEventListener("load", function () {
     slidesPerView: "auto", // 추가
   });
 
-// ======= review swiper적용
-const reviewSwiper = new Swiper(".review-inner", {
-  loop: true,
-  // 슬라이드의 모션 속도를 transition 맞춘다.
-  speed: 900,
-  autoplay: {
-    delay: 2500,
-    // 사용자가 마우스 클릭 드래그로 이동하면
-    // 아래 구문이 없으면 autoplya 가 해제되므로
-    // 이것을 방지해 주기위한 처리
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".sw-review-next",
-    prevEl: ".sw-review-prev",
-  },
-  centeredSlides: true, // 추가
-  slidesPerView: "auto", // 추가
+  // ======= review swiper적용
+  const reviewSwiper = new Swiper(".review-inner", {
+    loop: true,
+    // 슬라이드의 모션 속도를 transition 맞춘다.
+    speed: 900,
+    autoplay: {
+      delay: 2500,
+      // 사용자가 마우스 클릭 드래그로 이동하면
+      // 아래 구문이 없으면 autoplya 가 해제되므로
+      // 이것을 방지해 주기위한 처리
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".sw-review-next",
+      prevEl: ".sw-review-prev",
+    },
+    centeredSlides: true, // 추가
+    slidesPerView: "auto", // 추가
+  });
 });
-});
-
