@@ -1,5 +1,62 @@
 window.addEventListener("load", function () {
-  // ==== 스크롤 할 때, nav 상단 고정
+
+ // ===== top으로 가는 버튼
+ const topBtn = document.getElementById("topBtn");
+ topBtn.addEventListener("click", function (event) {
+   event.preventDefault();
+   // 조건문 수정
+   if (window.scrollY === 0) {
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth",
+     });
+   } else {
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth",
+     });
+   }
+ });
+
+ // ===== chat 버튼 클릭
+ const chatBtn = document.getElementById("chatBtn");
+ const chatTextBox = document.querySelector(".chat-text-box");
+
+ chatBtn.addEventListener("click", function (event) {
+   // chat-text-box의 display 속성을 토글하여 나타내거나 숨김
+   if (
+     chatTextBox.style.display === "none" ||
+     chatTextBox.style.display === ""
+   ) {
+     chatTextBox.style.display = "block";
+   } else {
+     chatTextBox.style.display = "none";
+   }
+ });
+
+ // ===== visual swiper적용
+ const swiper = new Swiper(".sw-visual", {
+  loop: true,
+  // 슬라이드의 모션 속도를 transition 맞춘다.
+  speed: 900,
+  autoplay: {
+    delay: 2500,
+    // 사용자가 마우스 클릭 드래그로 이동하면
+    // 아래 구문이 없으면 autoplya 가 해제되므로
+    // 이것을 방지해 주기위한 처리
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".sw-visual-next",
+    prevEl: ".sw-visual-prev",
+  },
+  centeredSlides: true, // 추가
+  slidesPerView: "auto", // 추가
+});
+
+
+
+  // ===== 스크롤 할 때, nav 상단 고정
   window.addEventListener("scroll", function () {
     var nav = document.querySelector(".nav");
     var header = document.querySelector(".header");
@@ -18,7 +75,7 @@ window.addEventListener("load", function () {
     inner.classList.add("inner"); // .inner 클래스 추가
   });
 
-  //nav 마우스 오버, 마우스아웃 효과
+  //===== nav 마우스 오버, 마우스아웃 효과
   document.querySelector(".gnb").addEventListener("mouseover", function () {
     // 모든 .depth2-wrap을 보이게 함
     const depth2 = document.querySelectorAll(".depth2");
@@ -37,6 +94,18 @@ window.addEventListener("load", function () {
     });
     navBg.style.display = "none";
   });
+  
+  // ===== top-banner 닫기
+  var topBanner = document.querySelector(".top-banner");
+  var topBannerClose = document.querySelector(".top-banner-close")
+
+  topBannerClose.addEventListener("click", function (event) {
+    if (topBanner.style.display === "none" || topBanner.style.display === "") {
+      topBanner.style.display = "none";
+    } else {
+      topBanner.style.display = "block";
+    }
+  });
 
   // ===== 모달창 닫기
   const modalClose = document.getElementById("modalClose");
@@ -44,13 +113,13 @@ window.addEventListener("load", function () {
 
   modalClose.addEventListener("click", function (event) {
     if (allClose.style.display === "none" || allClose.style.display === "") {
-      allClose.style.display = "block";
+      allClose.style.display = "";
     } else {
       allClose.style.display = "none";
     }
   });
 
-  // ==== 모달창 '오늘 하루 보지 않기' 클릭
+  //모달창 '오늘 하루 보지 않기' 클릭
   document.getElementById("modalToday").addEventListener("click", function () {
     // 현재 날짜와 시간을 기록
     const currentDate = new Date().toLocaleString();
@@ -89,79 +158,14 @@ window.addEventListener("load", function () {
         (window.performance && window.performance.navigation.type === 1)
       ) {
         sessionStorage.removeItem("hideModal");
-      } else {
-        // #modalWrap에 스크롤을 없앰
-        modalWrap.style.overflowY = "hidden";
-        modalWrap.style.display = "none";
-      }
-    }
+      } 
+    };
+
   };
 
-  // // 모달창 닫기
-  // const modalClose = document.getElementById("modalClose");
-  // const allClose = document.getElementById("modalWrap");
+});
 
-  // modalClose.addEventListener("click", function (event) {
-  //   if (allClose.style.display === "none" || allClose.style.display === "") {
-  //     allClose.style.display = "block";
-  //   } else {
-  //     allClose.style.display = "none";
-  //   }
-  // });
 
-  // //모달창 하루 동안 숨기기
-  // // 모달창이 보이지 않는 상태인지 여부를 localStorage에 저장
-  // if (localStorage.getItem("hideModal") === "true") {
-  //   document.getElementById("modalWrap").style.display = "none";
-  // }
-
-  // // 오늘 하루 보지 않기 버튼 클릭 시
-  // document.getElementById("modalToday").addEventListener("click", function () {
-  //   // localStorage에 'hideModal'을 'true'로 저장
-  //   localStorage.setItem("hideModal", "true");
-  //   // 모달창을 숨김
-  //   document.getElementById("modalWrap").style.display = "none";
-  // });
-
-  // // 닫기 버튼 클릭 시
-  // document.getElementById("modalClose").addEventListener("click", function () {
-  //   // 모달창을 숨김
-  //   document.getElementById("modalWrap").style.display = "none";
-  // });
-
-  // ===== top으로 가는 버튼
-  const topBtn = document.getElementById("topBtn");
-  topBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    // 조건문 수정
-    if (window.scrollY === 0) {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  });
-
-  //===== chat 버튼 클릭
-  const chatBtn = document.getElementById("chatBtn");
-  const chatTextBox = document.querySelector(".chat-text-box");
-
-  chatBtn.addEventListener("click", function (event) {
-    // chat-text-box의 display 속성을 토글하여 나타내거나 숨김
-    if (
-      chatTextBox.style.display === "none" ||
-      chatTextBox.style.display === ""
-    ) {
-      chatTextBox.style.display = "block";
-    } else {
-      chatTextBox.style.display = "none";
-    }
-  });
 
   // ===== visual swiper적용
   const swiper = new Swiper(".sw-visual", {
@@ -203,3 +207,4 @@ const reviewSwiper = new Swiper(".review-inner", {
   slidesPerView: "auto", // 추가
 });
 });
+
