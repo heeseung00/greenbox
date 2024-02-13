@@ -1,41 +1,37 @@
 window.addEventListener("load", function () {
+  // ===== top으로 가는 버튼
+  const topBtn = document.getElementById("topBtn");
+  topBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    // 조건문 수정
+    if (window.scrollY === 0) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  });
 
- // ===== top으로 가는 버튼
- const topBtn = document.getElementById("topBtn");
- topBtn.addEventListener("click", function (event) {
-   event.preventDefault();
-   // 조건문 수정
-   if (window.scrollY === 0) {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth",
-     });
-   } else {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth",
-     });
-   }
- });
+  // ===== chat 버튼 클릭
+  const chatBtn = document.getElementById("chatBtn");
+  const chatTextBox = document.querySelector(".chat-text-box");
 
- // ===== chat 버튼 클릭
- const chatBtn = document.getElementById("chatBtn");
- const chatTextBox = document.querySelector(".chat-text-box");
-
- chatBtn.addEventListener("click", function (event) {
-   // chat-text-box의 display 속성을 토글하여 나타내거나 숨김
-   if (
-     chatTextBox.style.display === "none" ||
-     chatTextBox.style.display === ""
-   ) {
-     chatTextBox.style.display = "block";
-   } else {
-     chatTextBox.style.display = "none";
-   }
- });
-
-
-
+  chatBtn.addEventListener("click", function (event) {
+    // chat-text-box의 display 속성을 토글하여 나타내거나 숨김
+    if (
+      chatTextBox.style.display === "none" ||
+      chatTextBox.style.display === ""
+    ) {
+      chatTextBox.style.display = "block";
+    } else {
+      chatTextBox.style.display = "none";
+    }
+  });
 
   // ===== 스크롤 할 때, nav 상단 고정
   window.addEventListener("scroll", function () {
@@ -75,10 +71,10 @@ window.addEventListener("load", function () {
     });
     navBg.style.display = "none";
   });
-  
+
   // ===== top-banner 닫기
   var topBanner = document.querySelector(".top-banner");
-  var topBannerClose = document.querySelector(".top-banner-close")
+  var topBannerClose = document.querySelector(".top-banner-close");
 
   topBannerClose.addEventListener("click", function (event) {
     if (topBanner.style.display === "none" || topBanner.style.display === "") {
@@ -139,9 +135,8 @@ window.addEventListener("load", function () {
         (window.performance && window.performance.navigation.type === 1)
       ) {
         sessionStorage.removeItem("hideModal");
-      } 
-    };
-
+      }
+    }
   };
 
  // ===== visual swiper적용
@@ -185,4 +180,3 @@ const reviewSwiper = new Swiper(".review-inner", {
   slidesPerView: "auto", // 추가
 });
 });
-

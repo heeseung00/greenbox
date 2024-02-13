@@ -307,12 +307,13 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  /* width: 272px;
+  height: 59px; */
   /* padding-left: 0px; */
 }
 
 .header .logo img {
-  width: 275px;
-  height: 63px;
+  width: 21%;
 
   /* 원래 로고 크기 */
   /* width: 275px;
@@ -336,8 +337,8 @@ height: 63px; */
 .header-mid-right a:nth-child(2)::after {
   content: "1";
   position: absolute;
-  top: -5px;
-  right: 7px;
+  top: -8px;
+  right: 6px;
   width: 15px;
   height: 15px;
   text-align: center;
@@ -434,7 +435,7 @@ nav .inner {
 
 .depth1:hover {
   color: #4aa577;
-  font-weight: 900;
+  /* font-weight: 900; */
 }
 
 .gnb a:hover {
@@ -449,7 +450,7 @@ nav:hover .nav-bg {
 
 .gnb > li:hover > a {
   color: #4aa577;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .gnb > li:hover .depth2 {
@@ -649,7 +650,6 @@ input:focus {
   /* width: 116px; */
   width: 100%;
   padding: 18px 0;
-  vertical-align: middle;
   transition: all 0.3s;
 }
 
@@ -700,9 +700,6 @@ input:focus {
   align-items: start;
 }
 
-.item-price {
-}
-
 .item a img {
   display: block;
   /* width: 281px; */
@@ -737,6 +734,8 @@ input:focus {
   opacity: 90%;
   border: transparent;
   cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 50%;
 }
 
 .item-link button:hover {
@@ -960,7 +959,6 @@ h1 {
   line-height: 150.5%;
 }
 .info {
-  bottom: 0;
   display: inline-block;
   font-size: 12px;
   margin: 16px 0;
@@ -1065,18 +1063,9 @@ h1 {
   border: 1px solid #666;
   border-radius: 6px;
   margin-bottom: 10px;
+  transition: all 0.3s;
 }
-.cs-right a:after {
-  position: absolute;
-  top: 41%;
-  right: 15px;
-  margin-top: -6.5px;
-  display: inline-block;
-  content: "";
-  /* background: url("../images/미압축/icon_linkArrow.svg") no-repeat center; */
-  width: 17px;
-  height: 19px;
-}
+
 .bank {
   position: relative;
   width: calc(100% / 3);
@@ -1094,6 +1083,7 @@ h1 {
   letter-spacing: -0.025em;
   color: #222;
 }
+
 .bank-list {
   position: relative;
   font-size: 1.5rem;
@@ -1102,7 +1092,8 @@ h1 {
   letter-spacing: -0.025em;
   color: #222;
 }
-.bank-btn {
+
+.bank-btn a{
   margin-left: 45%;
   margin-top: 1rem;
   position: relative;
@@ -1118,17 +1109,24 @@ h1 {
   border-radius: 6px;
   margin-bottom: 10px;
 }
-.bank-btn:after {
-  position: absolute;
-  top: 41%;
-  right: 15px;
-  margin-top: -6.5px;
-  display: inline-block;
-  content: "";
-  background: url("../images/미압축/icon_linkArrow.svg") no-repeat center;
-  width: 17px;
-  height: 19px;
+
+
+.ft-btn-hover:hover {
+  color: #fff;
+  background-color: #00ff95;
+  border: 1px solid #00ff95;
+  transition: all 0.4s;
 }
+
+.ft-btn-hover i {
+  color: #666;
+  margin-left: 30px;
+}
+
+.ft-btn-hover:hover i {
+  color: #fff;
+}
+
 .notice {
   position: relative;
   width: calc(100% / 3);
@@ -1170,6 +1168,8 @@ h1 {
   padding: 8px 0;
   position: relative;
 }
+
+
 .notice-list b {
   float: left;
   /* width: -webkit-calc(100% - 85px); */
@@ -1243,6 +1243,7 @@ h1 {
   /* vertical-align: top; */
   margin: 0 0 0 9px;
 }
+
 .link-right > li:nth-child(1) > a {
   display: block;
   width: 41px;
