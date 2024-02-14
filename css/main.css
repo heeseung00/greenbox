@@ -358,7 +358,8 @@ height: 63px; */
   z-index: 999;
   display: block;
   width: 100%;
-  /*min-height: 120px; */
+  /* max-width: 1200px;
+  min-height: 120px; */
   padding: 15px 0;
   background: #fff;
   /* white-space: nowrap; */
@@ -381,8 +382,8 @@ height: 63px; */
 nav .inner {
   display: flex;
   align-items: center;
-
   justify-content: space-between;
+  /* width: 1200px; */
 }
 
 .gnb {
@@ -662,10 +663,14 @@ input:focus {
 .test {
   position: relative;
   width: 100%;
-  padding: 37px 0 55px;
-  /* padding: 10px 0; */
+  padding: 10px 0;
+  /* background-color: #fafafd; */
   background-color: #f8f8f8;
   /* background-color: rgba(54, 221, 137, 0.07); */
+}
+
+.test-wrap {
+  margin: 37px 0 55px;
 }
 
 .test-title {
@@ -675,7 +680,6 @@ input:focus {
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
-  padding-top: 20px;
 }
 
 .test-title img {
@@ -684,37 +688,26 @@ input:focus {
   margin-left: 5px;
 }
 
-/* 아이템 공통 적용 */
 .item-box {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  gap: 28px;
 }
 
 .item {
+  width: calc(100% / 4);
   display: flex;
-  gap: 28px;
-  justify-content: center;
-  width: 100%;
-  /* align-items: start; */
+  flex-direction: column;
+  align-items: start;
 }
 
-.item > li {
-  width: calc(100% / 4 - 28px);
-  /* width: 100%; */
-}
-
-.item-img-box {
+.item a img {
   display: block;
+  /* width: 281px; */
   width: 100%;
   position: relative;
 }
 
-.item-img-box a {
-  width: 100%;
-}
-
-.item-img-box a img {
+.item-img-box {
   display: block;
   width: 100%;
   position: relative;
@@ -748,11 +741,6 @@ input:focus {
 .item-link button:hover {
   background-color: #00ff95;
   border-radius: 50%;
-}
-
-.info-box {
-  display: block;
-  width: 100%;
 }
 
 .item-title {
@@ -798,7 +786,11 @@ input:focus {
 .best {
   position: relative;
   width: 100%;
-  margin: 89px 0;
+  margin: 103px 0 83px;
+}
+
+.best-wrap {
+  margin: 37px 0 55px;
 }
 
 .best-title {
@@ -823,9 +815,12 @@ input:focus {
 }
 
 /* 골라담기 */
+
 .pick {
   position: relative;
   width: 100%;
+}
+.pick {
   margin: 100px 0 55px;
 }
 
@@ -859,7 +854,6 @@ h1 {
   width: 100%;
   position: relative;
 }
-
 /* 리뷰 */
 .review {
   margin: 100px 0 55px;
@@ -906,7 +900,6 @@ h1 {
 .sw-review-prev {
   position: absolute;
   top: 50%;
-  left: -2.5%;
   width: 27px;
   height: 44px;
   margin-top: -22px;
@@ -918,7 +911,7 @@ h1 {
 .sw-review-next {
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: 98%;
   width: 27px;
   height: 44px;
   margin-top: -22px;
@@ -1100,7 +1093,7 @@ h1 {
   color: #222;
 }
 
-.bank-btn a {
+.bank-btn a{
   margin-left: 45%;
   margin-top: 1rem;
   position: relative;
@@ -1116,6 +1109,7 @@ h1 {
   border-radius: 6px;
   margin-bottom: 10px;
 }
+
 
 .ft-btn-hover:hover {
   color: #fff;
@@ -1174,6 +1168,7 @@ h1 {
   padding: 8px 0;
   position: relative;
 }
+
 
 .notice-list b {
   float: left;

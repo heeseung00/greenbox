@@ -40,7 +40,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
     />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/responsive.css">
 
     <!-- 자바스크립트 -->
     <script src="js/html5shiv.js"></script>
@@ -54,7 +53,7 @@
   </head>
   <body>
     <!-- 모달창 -->
-    <!-- <div class="modal-wrap" id="modalWrap">
+    <div class="modal-wrap" id="modalWrap">
       <div class="modal-main">
         <a href="index.html" class="modal-img">
           <img src="images/modal-img-1.gif" alt="" id="modalImg" />
@@ -64,7 +63,7 @@
           <div class="modal-close" id="modalClose">닫기</div>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <!-- 고정 아이콘 -->
     <div class="icon-wrap">
@@ -298,7 +297,6 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="#">
-                  <!-- <img src="images/gnb.jpg" alt="정기배송" /> -->
                   <img src="images/gnb.jpg" alt="정기배송" />
                 </a>
               </div>
@@ -323,25 +321,28 @@
         <div class="inner">
           <div class="category-wrap">
             <a href="#">
+              <!-- <img src="images/category-icon-1.png" alt="신규혜택"/> -->
               <!-- <img src="images/category-gift-3d-2.png" alt="신규혜택"/> -->
-              <img src="images/category_img_1.png" alt="신규혜택" />
+              <img src="images/category-gift-box4.png" alt="신규혜택" />
               <p>신규혜택</p>
             </a>
             <a href="#">
-              <img src="images/category_img_2.png" alt="샐러드" />
+              <!-- <img src="images/category-icon-2.png" alt="샐러드"/> -->
+              <!-- <img src="images/category_img_1.jpg" alt="샐러드"/> -->
+              <img src="images/category-salad.png" alt="샐러드" />
               <p>샐러드</p>
             </a>
             <a href="#">
-              <img src="images/category_img_3.png" alt="간편식" />
+              <!-- <img src="images/category-icon-3.png" alt="간편식"/> -->
+              <img src="images/category_img_2.png" alt="간편식" />
               <p>간편식</p>
             </a>
             <a href="#">
-              <img src="images/category_img_4.png" alt="베스트" />
+              <img src="images/category-icon-4.png" alt="베스트" />
               <p>베스트</p>
             </a>
             <a href="#">
-              <!-- <img src="images/category_img_5.png" alt="이벤트" /> -->
-              <img src="images/category_img_5_2.png" alt="이벤트" />
+              <img src="images/category-icon-5.png" alt="이벤트" />
               <p>이벤트</p>
             </a>
           </div>
@@ -349,8 +350,8 @@
       </section>
       <!-- 맛보기 -->
       <section class="test">
-        <!-- <div class="inner"> -->
-          <div class="test-wrap inner">
+        <div class="inner">
+          <div class="test-wrap">
             <h1 class="test-title">
               처음이라면, 맛보기 어때요?
               <img
@@ -359,8 +360,7 @@
               />
             </h1>
             <div class="item-box">
-              <ul class="item">
-              <li>
+              <div class="item">
                 <div class="item-img-box">
                   <a href="#" class="item-img">
                     <img src="images/1.jpg" alt="일주일 식단" />
@@ -369,25 +369,24 @@
                     <button type="button" class="cart"></button>
                   </div>
                 </div>
-                <div class="info-box">
-                  <div class="item-title">
-                    <a href="#">원클릭 일주일 식단</a>
-                  </div>
-                  <div class="item-price">
-                    <span>21%</span>
-                    <span>37,700원</span>
-                    <span>48,000원</span>
-                  </div>
-                  <div class="item-review">
-                    <span
-                      ><img src="images/test-review.png" alt="리뷰 아이콘"
-                    /></span>
-                    <span>61</span>
-                  </div>
+
+                <div class="item-title">
+                  <a href="#">원클릭 일주일 식단</a>
                 </div>
-              </li>
-             
-              <li>
+                <div class="item-price">
+                  <span>21%</span>
+                  <span>37,700원</span>
+                  <span>48,000원</span>
+                </div>
+                <div class="item-review">
+                  <span
+                    ><img src="images/test-review.png" alt="리뷰 아이콘"
+                  /></span>
+                  <span>61</span>
+                </div>
+              </div>
+
+              <div class="item">
                 <div class="item-img-box">
                   <a href="#" class="item-img">
                     <img src="images/2.jpg" alt="두 끼 밸런스" />
@@ -411,9 +410,9 @@
                   /></span>
                   <span>52</span>
                 </div>
-              </li>
+              </div>
 
-              <li>
+              <div class="item">
                 <div class="item-img-box">
                   <a href="#" class="item-img">
                     <img src="images/3.jpg" alt="데일리 샐러드 10종 맛보기" />
@@ -437,8 +436,9 @@
                   /></span>
                   <span>707</span>
                 </div>
-              </li>
-              <li>
+              </div>
+
+              <div class="item">
                 <div class="item-img-box">
                   <a href="#" class="item-img">
                     <img src="images/4.jpg" alt="시즌3 곤약 라이스 6종 세트" />
@@ -461,12 +461,11 @@
                   /></span>
                   <span>98</span>
                 </div>
-              </li>
-              </ul>
+              </div>
             </div>
-          <!-- </div> -->
+          </div>
+        </div>
       </section>
-      
       <!-- 베스트 -->
       <section class="best">
         <div class="inner">
@@ -478,113 +477,112 @@
               />
             </h1>
             <div class="item-box">
-              <ul class="item">
-		            <li>
-                  <div class="item-img-box">
-                    <a href="#" class="item-img">
-                      <img src="images/best-img-1.jpg" alt="닭가슴살 샐러드" />
-                    </a>
-                    <div class="item-link">
-                      <button type="button" class="cart"></button>
-                    </div>
+              <div class="item">
+                <div class="item-img-box">
+                  <a href="#" class="item-img">
+                    <img src="images/best-img-1.jpg" alt="닭가슴살 샐러드" />
+                  </a>
+                  <div class="item-link">
+                    <button type="button" class="cart"></button>
                   </div>
+                </div>
 
-                  <div class="item-title">
-                    <a href="#">닭가슴살 샐러드</a>
-                  </div>
-                  <div class="item-price">
-                    <span>19%</span>
-                    <span>6,700원</span>
-                    <span>8,300원</span>
-                  </div>
-                  <div class="item-review">
-                    <span
-                      ><img src="images/test-review.png" alt="리뷰 아이콘"
-                    /></span>
-                    <span>476</span>
-                  </div>
-                </li>
+                <div class="item-title">
+                  <a href="#">닭가슴살 샐러드</a>
+                </div>
+                <div class="item-price">
+                  <span>19%</span>
+                  <span>6,700원</span>
+                  <span>8,300원</span>
+                </div>
+                <div class="item-review">
+                  <span
+                    ><img src="images/test-review.png" alt="리뷰 아이콘"
+                  /></span>
+                  <span>476</span>
+                </div>
+              </div>
 
-                <li>
-                  <div class="item-img-box">
-                    <a href="#">
-                      <img src="images/best-img-2.jpg" alt="크래미 샐러드" />
-                    </a>
-                    <div class="item-link">
-                      <button type="button" class="cart"></button>
-                    </div>
+              <div class="item">
+                <div class="item-img-box">
+                  <a href="#">
+                    <img src="images/best-img-2.jpg" alt="크래미 샐러드" />
+                  </a>
+                  <div class="item-link">
+                    <button type="button" class="cart"></button>
                   </div>
+                </div>
 
-                  <div class="item-title">
-                    <a href="#">크래미 샐러드</a>
-                  </div>
-                  <div class="item-price">
-                    <span>23%</span>
-                    <span>6,900원</span>
-                    <span>9,000원</span>
-                  </div>
-                  <div class="item-review">
-                    <span
-                      ><img src="images/test-review.png" alt="리뷰 아이콘"
-                    /></span>
-                    <span>870</span>
-                  </div>
-                </li>
+                <div class="item-title">
+                  <a href="#">크래미 샐러드</a>
+                </div>
+                <div class="item-price">
+                  <span>23%</span>
+                  <span>6,900원</span>
+                  <span>9,000원</span>
+                </div>
+                <div class="item-review">
+                  <span
+                    ><img src="images/test-review.png" alt="리뷰 아이콘"
+                  /></span>
+                  <span>870</span>
+                </div>
+              </div>
 
-                <li>
-                  <div class="item-img-box">
-                    <a href="#">
-                      <img src="images/best-img-3.jpg" alt="훈제오리 샐러드" />
-                    </a>
-                    <div class="item-link">
-                      <button type="button" class="cart"></button>
-                    </div>
+              <div class="item">
+                <div class="item-img-box">
+                  <a href="#">
+                    <img src="images/best-img-3.jpg" alt="훈제오리 샐러드" />
+                  </a>
+                  <div class="item-link">
+                    <button type="button" class="cart"></button>
                   </div>
-                  <div class="item-title">
-                    <a href="#">훈제오리 샐러드</a>
-                  </div>
-                  <div class="item-price">
-                    <span>21%</span>
-                    <span>6,700원</span>
-                    <span>9,000원</span>
-                  </div>
-                  <div class="item-review">
-                    <span
-                      ><img src="images/test-review.png" alt="리뷰 아이콘"
-                    /></span>
-                    <span>647</span>
-                  </div>
-                </li>
+                </div>
+                <div class="item-title">
+                  <a href="#">훈제오리 샐러드</a>
+                </div>
+                <div class="item-price">
+                  <span>21%</span>
+                  <span>6,700원</span>
+                  <span>9,000원</span>
+                </div>
+                <div class="item-review">
+                  <span
+                    ><img src="images/test-review.png" alt="리뷰 아이콘"
+                  /></span>
+                  <span>647</span>
+                </div>
+              </div>
 
-                <li>
-                  <div class="item-img-box">
-                    <a href="#">
-                      <img
-                        src="images/best-img-4.jpg"
-                        alt="닭가슴살볼 숯불갈비맛 샐러드"
-                      />
-                    </a>
-                    <div class="item-link">
-                      <button type="button" class="cart"></button>
-                    </div>
+              <div class="item">
+                <div class="item-img-box">
+                  <a href="#">
+                    <img
+                      src="images/best-img-4.jpg"
+                      alt="닭가슴살볼 숯불갈비맛 샐러드"
+                    />
+                  </a>
+                  <div class="item-link">
+                    <button type="button" class="cart"></button>
                   </div>
+                </div>
 
-                  <div class="item-title">
-                    <a href="#">닭가슴살볼 숯불갈비맛 샐러드</a>
-                  </div>
-                  <div class="item-price">
-                    <span>23%</span>
-                    <span>6,900원</span>
-                    <span>9,000원</span>
-                  </div>
-                  <div class="item-review">
-                    <span
-                      ><img src="images/test-review.png" alt="리뷰 아이콘"
-                    /></span>
-                    <span>370</span>
-                  </div>
-                </li>
-              </ul>
+                <div class="item-title">
+                  <a href="#">닭가슴살볼 숯불갈비맛 샐러드</a>
+                </div>
+                <div class="item-price">
+                  <span>23%</span>
+                  <span>6,900원</span>
+                  <span>9,000원</span>
+                </div>
+                <div class="item-review">
+                  <span
+                    ><img src="images/test-review.png" alt="리뷰 아이콘"
+                  /></span>
+                  <span>370</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -596,7 +594,7 @@
       </section>
 
       <!-- 골라담기 -->
-      <section class="pick">
+      <seciton class="pick">
         <div class="pick-box inner">
           <div class="section-title">
             <h1>
@@ -664,7 +662,7 @@
             </ul>
           </div>
         </div>
-      </section>
+      </seciton>
       <!-- 리뷰 -->
       <section class="review">
         <div class="review-box inner">
