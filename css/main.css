@@ -819,6 +819,8 @@ input:focus {
 .pick {
   position: relative;
   width: 100%;
+}
+.pick {
   margin: 100px 0 55px;
 }
 
@@ -898,7 +900,6 @@ h1 {
 .sw-review-prev {
   position: absolute;
   top: 50%;
-  left: -2.5%;
   width: 27px;
   height: 44px;
   margin-top: -22px;
@@ -910,7 +911,7 @@ h1 {
 .sw-review-next {
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: 98%;
   width: 27px;
   height: 44px;
   margin-top: -22px;
@@ -1092,7 +1093,7 @@ h1 {
   color: #222;
 }
 
-.bank-btn a {
+.bank-btn a{
   margin-left: 45%;
   margin-top: 1rem;
   position: relative;
@@ -1108,6 +1109,7 @@ h1 {
   border-radius: 6px;
   margin-bottom: 10px;
 }
+
 
 .ft-btn-hover:hover {
   color: #fff;
@@ -1166,6 +1168,7 @@ h1 {
   padding: 8px 0;
   position: relative;
 }
+
 
 .notice-list b {
   float: left;
