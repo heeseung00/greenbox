@@ -98,7 +98,13 @@ body {
 
 /* 고정 아이콘 */
 .icon-wrap {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 9999;
+  bottom: 5%;
+  right: 2%;
+  width: 100%;
 }
 
 #topBtn {
@@ -106,9 +112,9 @@ body {
   height: 55px;
   background-color: #fff;
   /* background-color: #4aa577; */
-  position: fixed;
+  position: absolute;
   right: 4%;
-  bottom: 10%;
+  bottom: 0;
   z-index: 9999;
   border-radius: 50%;
   border: none;
@@ -118,7 +124,6 @@ body {
   overflow: hidden;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.1) 0px 8px 30px;
-  margin-bottom: 43px;
 }
 
 #topBtn:hover {
@@ -140,19 +145,16 @@ body {
 #chatBtn {
   width: 55px;
   height: 55px;
-  position: fixed;
+  position: absolute;
   right: 4%;
-  bottom: 7%;
-  border-radius: 20px;
-  z-index: 9999;
-  /* background-color: #e7e7e7; */
-  background-color: #fff;
+  bottom: 65px;
+  z-index: 99999999999999999999999999;
+  border-radius: 50%;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.1) 0px 8px 30px;
-  /* background: url(../images/chat.svg) no-repeat center;
-  background-size: 60%; */
   cursor: pointer;
   transition: all 0.3s;
+  background-color: #17633d;
 }
 
 #chatBtn:hover {
@@ -161,14 +163,15 @@ body {
 }
 
 #chatBtn img {
-  width: 65%;
+  width: 55%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 53%;
+  left: 54%;
+  transform: translate(-53%, -54%);
 }
 
 .chat-text-box {
+  display: none;
   width: 300px;
   height: 550px;
   background-color: #fdfcfc;
@@ -176,7 +179,7 @@ body {
   position: absolute;
   bottom: 0px;
   left: -320px;
-  display: none;
+  z-index: 9999999;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px inset,
     rgba(0, 0, 0, 0.1) 0px 4px 6px;
 }
@@ -355,7 +358,7 @@ height: 63px; */
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 9999;
   display: block;
   width: 100%;
   /* max-width: 1200px;
@@ -563,7 +566,7 @@ input:focus {
 
 .sw-visual-prev {
   position: absolute;
-  z-index: 9999;
+  z-index: 999;
   top: 45%;
   left: 5%;
   background: url(../images/banner_slide_right_btn.png) no-repeat center;
@@ -578,7 +581,7 @@ input:focus {
 
 .sw-visual-next {
   position: absolute;
-  z-index: 9999;
+  z-index: 999;
   top: 45%;
   right: 5%;
   background: url(../images/banner_slide_right_btn.png) no-repeat 50% 50%;
@@ -696,7 +699,9 @@ input:focus {
 .item {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  /* gap: 28px; */
+  gap: 2.5%;
+
   width: 100%;
 }
 
@@ -730,10 +735,10 @@ input:focus {
   right: 11px; */
   bottom: 5%;
   right: 5%;
-  /* width: 51px;
-  height: 51px; */
-  width: clamp(35px, 4.25vw, 51px);
-  height: clamp(35px, 4.25vw, 51px);
+  width: clamp(30px, 4.25vw, 51px);
+  height: clamp(30px, 4.25vw, 51px);
+  /* width: clamp(35px, 30%, 51px);
+  height: clamp(35px, 10%, 51px); */
 }
 
 .item-link button {
