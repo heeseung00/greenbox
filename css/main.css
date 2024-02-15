@@ -74,6 +74,18 @@ body {
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
+
+.modal-new {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  background-color: #fff;
+  align-items: center;
+  padding: 10px;
+  line-height: 30px;
+}
+
 .modal-text {
   display: flex;
   justify-content: space-between;
@@ -147,7 +159,7 @@ body {
   height: 55px;
   position: absolute;
   right: 4%;
-  bottom: 65px;
+  bottom: 6px;
   z-index: 99999999999999999999999999;
   border-radius: 50%;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
