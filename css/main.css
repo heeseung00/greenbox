@@ -112,7 +112,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 480px;
+  max-width: 350px;
   background-color: #fff;
   align-items: center;
   padding: 15px;
@@ -295,6 +295,7 @@ body {
   align-items: center;
   width: 100%;
   height: 42px;
+  /* background-color: #17633d; */
   background-color: #17633d;
 }
 
@@ -483,7 +484,7 @@ nav .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 1200px; */
+  max-width: 1200px;
 }
 
 .gnb {
@@ -491,15 +492,17 @@ nav .inner {
   flex-basis: auto;
   justify-content: space-around;
   align-items: center;
+  gap: 6.222vw;
   /* gap: 104px; */
   padding-left: 10px;
   margin-right: 20px;
-  z-index: 999999999;
+  z-index: 999999;
   width: 100%;
 }
 
 .gnb li {
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: clamp(1.5rem, 1.667vw, 2rem);
   width: calc(100% / 6);
   /* font-size: 1.6vw; */
   /* padding: 0 48px; */
@@ -603,7 +606,7 @@ nav:hover .nav-bg {
   /* width: 220px; */
   width: 100%;
   max-width: 200px;
-  min-width: 152px;
+  min-width: 170px;
   /* height: 4vh; */
   height: 34px;
   border-radius: 20px;
@@ -662,6 +665,7 @@ input:focus {
 .visual-slide {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 
 .sw-visual-prev {
@@ -711,7 +715,95 @@ input:focus {
   overflow: hidden;
 }
 
-.swiper-slide a {
+.visual-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.visual-box .inner {
+  position: relative;
+  
+}
+
+.visual-bg-1 {
+  background: url("../images/visual-img-11.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  /* height: 403px; */
+  /* height: 33.5833vw; */
+}
+.visual-bg-2 {
+  background: url("../images/KakaoTalk_20240216_174748004.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  /* height: 403px; */
+  /* height: 33.5833vw; */
+}
+.visual-bg-3 {
+  background: url("../images/KakaoTalk_20240216_174748004_01.png") no-repeat
+    center;
+  background-size: cover;
+  width: 100%;
+  /* height: 403px; */
+  /* height: 33.5833vw; */
+}
+.visual-bg-4 {
+  background: url("../images/KakaoTalk_20240216_174748004_02.png") no-repeat
+    center;
+  background-size: cover;
+  width: 100%;
+  /* height: 403px; */
+  /* height: 33.5833vw; */
+}
+.visual-bg-5 {
+  background: url("../images/KakaoTalk_20240216_174748004.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  /* height: 403px; */
+  height: 33.5833vw;
+}
+
+.visual-box .inner h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* font-size: 100px; */
+  font-size: clamp(30px, 5.2083vw, 100px);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.5;
+  text-shadow: 0px 4px 6px #4d4d4d54, 3px 3px 0px #31313117,
+    0px 8px 30px #00000036;
+  text-align: center;
+}
+
+.visual-box .inner p {
+  opacity: 0.9;
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+}
+.visual-box .inner a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  height: 65px;
+  /* opacity: 1; */
+  padding: 0 45px 0 50px;
+  /* background-color: aquamarine; */
+  margin-top: 50px;
+  font-size: 17px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* .swiper-slide a {
   width: 100%;
   display: flex;
   align-items: center;
@@ -722,7 +814,7 @@ input:focus {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
+} */
 
 /* 카테고리 */
 .category {
@@ -738,11 +830,14 @@ input:focus {
 }
 
 .category a {
-  /* width: 9.28%; */
-  width: 100px;
+  width: 9.28%;
+  /* width: 100%; */
   /* min-width: 66.81px; */
   margin: 18px 35px 46px;
   vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* .category a img:hover{
@@ -761,6 +856,7 @@ input:focus {
   text-align: center;
   font-size: 1.7rem;
   font-weight: bold;
+  width: 100%;
 }
 
 /* 맛보기 */
@@ -997,6 +1093,34 @@ h1 {
   width: 100%;
   margin: 0 auto;
 }
+
+.more-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: normal;
+  transform: translateY(8px);
+}
+.more-arrow a {
+  position: relative;
+  padding: 0 15px 0 0;
+  color: #202020;
+  font-size: 18px;
+  font-weight: 500;
+}
+.more-arrow::after {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #202020;
+  border-right: 1px solid #202020;
+  transform: rotate(45deg);
+  content: "";
+}
+
 /* swiper */
 .review-inner .swiper-wrapper {
   padding: 20px 0;
