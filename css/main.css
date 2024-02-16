@@ -46,22 +46,30 @@ body {
 /* 기타 */
 /* 모달창 */
 .modal-wrap {
+  display: flex;
+  justify-content: center;
   position: fixed;
-  width: 100%;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100%;
+  margin: 0 auto;
   z-index: 999999;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-main {
   position: absolute;
-  top: 20%;
-  /* margin: 0 auto; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  max-width: 350px;
+  height: auto;
 }
 
 .modal-img {
@@ -82,30 +90,81 @@ body {
   max-width: 480px;
   background-color: #fff;
   align-items: center;
-  padding: 10px;
-  line-height: 30px;
+  padding: 15px;
+  line-height: 38px;
+}
+
+.modal-new h2 {
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+
+.modal-new p {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.modal-new a {
+  position: relative;
+  width: 100%;
+}
+.modal-new a button {
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #21bd6f;
+  border-radius: 7px;
+  border: none;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.modal-new button::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  background-color: #eeeeee;
 }
 
 .modal-text {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   /* padding: 10px; */
   width: 100%;
-  max-width: 480px;
+  max-width: 400px;
   background-color: #fff;
   font-size: 1.6rem;
+  font-weight: 600;
   border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+
+.modal-text::before {
+  content: "";
+  width: 1px;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  background-color: #eeeeee;
 }
 
 .modal-today {
   cursor: pointer;
-  padding: 20px;
+  padding: 15px 20px;
+  width: 50%;
 }
 
 .modal-close {
   cursor: pointer;
-  padding: 20px;
+  padding: 15px 20px;
+  width: 50%;
 }
 
 /* 고정 아이콘 */
@@ -113,10 +172,11 @@ body {
   display: flex;
   flex-direction: column;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999;
   bottom: 5%;
   right: 2%;
   width: 100%;
+  transition: all 0.3s;
 }
 
 #topBtn {
@@ -128,6 +188,7 @@ body {
   right: 4%;
   bottom: 0;
   z-index: 9999;
+  /* margin-top: 20px; */
   border-radius: 50%;
   border: none;
   display: flex;
@@ -159,13 +220,12 @@ body {
   height: 55px;
   position: absolute;
   right: 4%;
-  bottom: 6px;
-  z-index: 99999999999999999999999999;
+  bottom: 60px;
+  z-index: 9999999;
   border-radius: 50%;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
     rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.1) 0px 8px 30px;
   cursor: pointer;
-  transition: all 0.3s;
   background-color: #17633d;
 }
 
@@ -191,7 +251,7 @@ body {
   position: absolute;
   bottom: 0px;
   left: -320px;
-  z-index: 9999999;
+  /* position:absolute 적용시 z-index도 같이 적용된다. */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px inset,
     rgba(0, 0, 0, 0.1) 0px 4px 6px;
 }
@@ -403,6 +463,7 @@ nav .inner {
 
 .gnb {
   display: flex;
+  flex-basis: auto;
   justify-content: space-around;
   align-items: center;
   /* gap: 104px; */
@@ -414,6 +475,7 @@ nav .inner {
 
 .gnb li {
   font-size: 2rem;
+  width: calc(100% / 6);
   /* font-size: 1.6vw; */
   /* padding: 0 48px; */
 }
@@ -514,7 +576,7 @@ nav:hover .nav-bg {
   display: block;
   position: relative;
   /* width: 220px; */
-  width: 50%;
+  width: 100%;
   max-width: 200px;
   min-width: 152px;
   /* height: 4vh; */
@@ -534,9 +596,9 @@ input:focus {
   background-color: transparent;
   border: none;
   /* width: 190px; */
-  width: 100%;
+  max-width: 165px;
   height: 100%;
-  padding: 0 20px;
+  margin: 0 20px;
   font-size: 1.4rem;
 }
 
@@ -561,6 +623,7 @@ input:focus {
   right: 0;
   display: block;
   width: 100%;
+  /* height: 50vw; */
   margin: 0;
 }
 /* 비주얼 hover 버튼 나오는 효과 */
@@ -650,7 +713,8 @@ input:focus {
 }
 
 .category a {
-  width: 9.28%;
+  /* width: 9.28%; */
+  width: 100px;
   /* min-width: 66.81px; */
   margin: 18px 35px 46px;
   vertical-align: middle;
@@ -713,7 +777,6 @@ input:focus {
   justify-content: center;
   /* gap: 28px; */
   gap: 2.5%;
-
   width: 100%;
 }
 

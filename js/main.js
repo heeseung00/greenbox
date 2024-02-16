@@ -88,15 +88,14 @@ window.addEventListener("load", function () {
   const modalClose = document.getElementById("modalClose");
   const allClose = document.getElementById("modalWrap");
 
-  modalClose.addEventListener("click", function (event) {
-    if (allClose.style.display === "none" || allClose.style.display === "") {
-      allClose.style.display = "";
-    } else {
-      allClose.style.display = "none";
-    }
+  modalClose.addEventListener("click", function () {
+    // #modalWrap의 스타일 초기화하여 세로 스크롤을 허용
+    allClose.style.overflow = "visible";
+    // 모달창을 숨김
+    allClose.style.display = "none";
   });
 
-  //모달창 '오늘 하루 보지 않기' 클릭
+  // 모달창 '오늘 하루 보지 않기' 클릭
   document.getElementById("modalToday").addEventListener("click", function () {
     // 현재 날짜와 시간을 기록
     const currentDate = new Date().toLocaleString();
@@ -106,23 +105,12 @@ window.addEventListener("load", function () {
       JSON.stringify({ value: true, datetime: currentDate })
     );
 
-    // #modalWrap에 스크롤을 없앰
-    document.getElementById("modalWrap").style.overflowY = "hidden";
     // 모달창을 숨김
-    document.getElementById("modalWrap").style.display = "none";
-  });
-
-  // 닫기 버튼 클릭 시
-  document.getElementById("modalClose").addEventListener("click", function () {
-    // #modalWrap의 스타일 초기화하여 세로 스크롤을 허용
-    document.getElementById("modalWrap").style.overflowY = "visible";
-    // 모달창을 숨김
-    document.getElementById("modalWrap").style.display = "none";
+    allClose.style.display = "none";
   });
 
   // 페이지 로드 시 모달 상태 확인
   window.onload = function () {
-    const modalWrap = document.getElementById("modalWrap");
     const storedData = JSON.parse(sessionStorage.getItem("hideModal"));
 
     if (storedData && storedData.value) {
@@ -139,44 +127,66 @@ window.addEventListener("load", function () {
     }
   };
 
- // ===== visual swiper적용
- const swiper = new Swiper(".sw-visual", {
-  loop: true,
-  // 슬라이드의 모션 속도를 transition 맞춘다.
-  speed: 900,
-  autoplay: {
-    delay: 2500,
-    // 사용자가 마우스 클릭 드래그로 이동하면
-    // 아래 구문이 없으면 autoplya 가 해제되므로
-    // 이것을 방지해 주기위한 처리
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".sw-visual-next",
-    prevEl: ".sw-visual-prev",
-  },
-  centeredSlides: true, // 추가
-  slidesPerView: "auto", // 추가
-});
+  // 안내창 스크립트
+  const body = document.querySelector("body");
 
+  // isOpen 값에 따라 스크롤을 제어하는 함수
+  function controlScroll(isOpen) {
+    if (isOpen) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+  }
 
-// ======= review swiper적용
-const reviewSwiper = new Swiper(".review-inner", {
-  loop: true,
-  // 슬라이드의 모션 속도를 transition 맞춘다.
-  speed: 900,
-  autoplay: {
-    delay: 2500,
-    // 사용자가 마우스 클릭 드래그로 이동하면
-    // 아래 구문이 없으면 autoplya 가 해제되므로
-    // 이것을 방지해 주기위한 처리
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".sw-review-next",
-    prevEl: ".sw-review-prev",
-  },
-  centeredSlides: true, // 추가
-  slidesPerView: "auto", // 추가
-});
+  // 초기 모달 상태 설정
+  const isOpen = true;
+  controlScroll(isOpen);
+
+  allClose.addEventListener("click", function () {
+    allClose.style.display = "none";
+
+    // 모달이 닫힐 때는 스크롤을 다시 활성화
+    controlScroll(false);
+  });
+
+  // ====== visual swiper적용
+  const swiper = new Swiper(".sw-visual", {
+    loop: true,
+    // 슬라이드의 모션 속도를 transition 맞춘다.
+    speed: 900,
+    autoplay: {
+      delay: 2500,
+      // 사용자가 마우스 클릭 드래그로 이동하면
+      // 아래 구문이 없으면 autoplya 가 해제되므로
+      // 이것을 방지해 주기위한 처리
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".sw-visual-next",
+      prevEl: ".sw-visual-prev",
+    },
+    centeredSlides: true, // 추가
+    slidesPerView: "auto", // 추가
+  });
+
+  // ======= review swiper적용
+  const reviewSwiper = new Swiper(".review-inner", {
+    loop: true,
+    // 슬라이드의 모션 속도를 transition 맞춘다.
+    speed: 900,
+    autoplay: {
+      delay: 2500,
+      // 사용자가 마우스 클릭 드래그로 이동하면
+      // 아래 구문이 없으면 autoplya 가 해제되므로
+      // 이것을 방지해 주기위한 처리
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".sw-review-next",
+      prevEl: ".sw-review-prev",
+    },
+    centeredSlides: true, // 추가
+    slidesPerView: "auto", // 추가
+  });
 });
