@@ -909,6 +909,32 @@ h1 {
   width: 100%;
   margin: 0 auto;
 }
+.more-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: normal;
+  transform: translateY(8px);
+}
+.more-arrow a {
+  position: relative;
+  padding: 0 15px 0 0;
+  color: #202020;
+  font-size: 18px;
+  font-weight: 500;
+}
+.more-arrow::after {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #202020;
+  border-right: 1px solid #202020;
+  transform: rotate(45deg);
+  content: '';
+}
 /* swiper */
 .review-inner .swiper-wrapper {
   padding: 20px 0;
@@ -946,26 +972,27 @@ h1 {
 .sw-review-prev {
   position: absolute;
   top: 50%;
-  left: -4%;
+  left: -5%;
   width: 10%;
   height: 10%;
   margin-top: -22px;
   z-index: 10;
   cursor: pointer;
   background-size: 27px 44px;
-  background: url("../images/미압축/review_button_left.png") no-repeat center;
+  background: url("../images/미압축/review-arrow-left.svg") no-repeat center;
+  
 }
 .sw-review-next {
   position: absolute;
   top: 50%;
-  right: -4%;
+  right: -5%;
   width: 10%;
   height: 10%;
   margin-top: -22px;
   z-index: 10;
   cursor: pointer;
   background-size: 27px 44px;
-  background: url("../images/미압축/review_button_right.png") no-repeat center;
+  background: url("../images/미압축/review-arrow-right.svg") no-repeat center;
 }
 .sw-review-prev:hover {
   opacity: 1;
@@ -1021,14 +1048,15 @@ h1 {
 /* 푸터 up */
 .ft-up {
   display: block;
-  border-top: 1px solid #ddd;
+  margin: 100px 0;
+  /* border-top: 1px solid #ddd; */
   /* background-color: #eaeae7; */
 }
 .ft-top-wrap {
   display: flex;
   position: relative;
   width: 100%;
-  padding: 43px 0 48px;
+  /* padding: 43px 0 48px; */
   /* display: table;
   table-layout: fixed; */
 }
@@ -1037,10 +1065,10 @@ h1 {
   position: relative;
   width: calc(100% / 2.5);
   padding-right: 29px;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid  #e2e2e2;
 }
 .ft-up-tit {
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.05em;
   font-size: 1.9rem;
   color: #222;
@@ -1108,17 +1136,27 @@ h1 {
   line-height: 45px;
   letter-spacing: -0.025em;
   color: #666;
-  border: 1px solid #666;
-  border-radius: 6px;
+  border: 1px solid #999;
+  border-radius: 3px;
   margin-bottom: 10px;
   transition: all 0.3s;
 }
-
+/* .cs-right a:after {
+  position: absolute;
+  top: 41%;
+    right: 15px;
+    margin-top: -6.5px;
+  display: inline-block;
+  content: "";
+  background: url("../images/미압축/icon_linkArrow.svg") no-repeat center;
+  width: 17px;
+  height: 19px;
+}  수정필요*/
 .bank {
   position: relative;
   width: calc(100% / 3.5);
   padding: 0 29px;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #e1e1e1;
   /* display: table-cell; */
 }
 
@@ -1153,8 +1191,8 @@ h1 {
   line-height: 45px;
   letter-spacing: -0.025em;
   color: #666;
-  border: 1px solid #666;
-  border-radius: 6px;
+  border: 1px solid #999;
+  border-radius: 3px;
   margin-bottom: 10px;
 }
 
@@ -1166,7 +1204,7 @@ h1 {
 }
 
 .ft-btn-hover i {
-  color: #666;
+  color: #777;
   margin-left: 30px;
 }
 
@@ -1207,12 +1245,12 @@ h1 {
 .notice-list > li {
   float: left;
   width: 100%;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e2e2e2;
 }
 .notice-list > li > a {
   float: left;
   width: 100%;
-  padding: 8px 0;
+  padding: 6px 0;
   position: relative;
 }
 
@@ -1223,7 +1261,7 @@ h1 {
   font-size: 15px;
   line-height: 25px;
   letter-spacing: -0.025em;
-  font-weight: 400;
+  font-weight: 600;
   color: #666;
   -webkit-transition: color 300ms;
   transition: color 300ms;
@@ -1260,7 +1298,7 @@ h1 {
 }
 .link-left {
   display: flex;
-  padding: 40px 0 30px;
+  padding: 30px 0 30px;
   font-size: 0;
 }
 .link-left > li {
@@ -1279,7 +1317,7 @@ h1 {
   font-family: inherit;
 }
 .link-right {
-  padding: 26px 0 0;
+  padding: 19px 0 0;
   font-size: 0;
   display: flex;
   /* background-color: #858585; */
